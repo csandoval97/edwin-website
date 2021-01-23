@@ -30,21 +30,25 @@
 
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-8">
-                <img src="/public/images/story1.gif" class="img-fluid" >
-            </div>
+              <img src="/public/images/story1.gif" class="img-fluid" onload="resize(this)" >
         </div>
     </div>
 
     <script src="public/js/bootstrap.bundle.min.js"></script>
-    <!-- <script> 
-        var height = window.innerHeight*.97
-        var width = window.innerWidth
-        var img = document.getElementsByName('selfie')[0]
-    
-        img.height = height
-        img.width = 'auto'
-    </script> -->
+    <script>
+      function resize(img){
+          var imgWidth = img.width
+          var imgHeight = img.height
+
+          img.style.width = `${Number(window.innerWidth)*.85}px`;
+          img.style.height = 'auto'
+          
+          if(img.height > window.innerHeight){
+              img.style.height = `${Number(window.innerHeight)*.85}px`;
+              img.style.width = 'auto'
+          }
+      }
+    </script>
 </body>
 </html>
 
